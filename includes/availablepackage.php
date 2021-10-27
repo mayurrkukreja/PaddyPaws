@@ -64,8 +64,8 @@ if(isset($_POST['save'])){
                                 $image_name = addslashes($_FILES['image']['name']);
                                 $image_size = getimagesize($_FILES['image']['tmp_name']);
 //
-                                move_uploaded_file($_FILES["image"]["tmp_name"], "../upload/" . $_FILES["image"]["name"]);
-                                $location = "../upload/" . $_FILES["image"]["name"];
+                                move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $_FILES["image"]["name"]);
+                                $location = "images/" . $_FILES["image"]["name"];
 			if(empty($name) || empty($prize) || empty($des) || empty($stat)){
 					echo '<script>alert("Fields must be empty.");
 								 window.location.href="addcnp.php";
@@ -77,7 +77,7 @@ if(isset($_POST['save'])){
 					if($result==true){
 						echo '<script>alert("Save Successfully!");
 									window.location.href="addcnp.php";</script>';}else {
-										echo '<script>alert("Sory unable to process your request!");
+										echo '<script>alert("Sorry unable to process your request!");
 									window.location.href="addcnp.php";</script>';
 										}
 						
